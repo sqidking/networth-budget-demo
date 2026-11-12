@@ -1,0 +1,21 @@
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+address = "127.0.0.1"
+
+# Buttons and links take the chart palette's first blue (src/stmtrecon/charts.py), so red stays reserved for
+# "over budget".
+[theme]
+baseRadius = "0.6rem"
+headingFontWeights = [700, 600, 600]
+headingFontSizes = ["2.4rem", "1.5rem", "1.2rem"]
+
+[theme.light]
+primaryColor = "#2a78d6"
+
+[theme.dark]
+primaryColor = "#3987e5"

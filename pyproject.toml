@@ -1,0 +1,35 @@
+[project]
+name = "networth-budget-demo"
+version = "0.1.0"
+description = "Net worth and budget tracking demo, built on a verified bank statement parser"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pdfplumber>=0.11",
+    "streamlit>=1.46",
+    "fpdf2>=2.8",
+    "plotly>=5.24",
+    "pandas>=2.2",
+]
+
+[project.scripts]
+stmtrecon = "stmtrecon.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stmtrecon"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"src/stmtrecon/charts.py" = ["C408"]   # dict(...) is the usual Plotly style
